@@ -31,7 +31,7 @@ Key ideas explored:
 ---
 
 ## Repository Structure
-
+```text
 .
 ├── notebooks/
 │   ├── 01_training_qlora.ipynb
@@ -99,4 +99,3 @@ Set the following environment variables:
 ```bash
 export HF_TOKEN=your_huggingface_token
 export WANDB_API_KEY=your_wandb_key
-```md
