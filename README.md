@@ -99,3 +99,34 @@ Set the following environment variables:
 export HF_TOKEN=your_huggingface_token
 export WANDB_API_KEY=your_wandb_key
 ```
+---
+
+## Tech Stack
+
+- **Model:** LLaMA 3.1 (8B)
+- **Fine-tuning:** QLoRA (LoRA + 4-bit quantization)
+- **Libraries & Tools:**
+  - PyTorch
+  - Hugging Face Transformers
+  - TRL (SFTTrainer)
+  - PEFT
+  - bitsandbytes
+  - Datasets
+  - Weights & Biases
+- **Hardware:** Single-GPU setup (memory-efficient training)
+
+---
+
+## Features
+
+- Parameter-efficient fine-tuning using **QLoRA**
+- 4-bit NF4 quantization for reduced GPU memory usage
+- Custom data collator for numeric price prediction
+- Comparison of inference strategies:
+  - Greedy decoding
+  - Probability-weighted top-K decoding (K=3)
+- Quantitative evaluation using:
+  - Absolute error
+  - RMSLE
+- Visual analysis with prediction vs ground-truth scatter plots
+
