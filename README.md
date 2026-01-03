@@ -34,21 +34,22 @@ Key ideas explored:
 
 .
 ├── notebooks/
-│ ├── 01_training_qlora.ipynb
-│ └── 02_inference_and_evaluation.ipynb
+│   ├── 01_training_qlora.ipynb
+│   └── 02_inference_and_evaluation.ipynb
 │
 ├── outputs/
-│ ├── greedy_scatter.png
-│ └── topk_weighted_scatter.png
+│   ├── greedy_scatter.png
+│   └── topk_weighted_scatter.png
 │
 └── README.md
+
 
 ---
 
 ## Notebooks
 
-### 1️⃣ Training – QLoRA Fine-Tuning  
-**`01_training_qlora.ipynb`**
+### 1️ Training – QLoRA Fine-Tuning  
+**`training_qlora.ipynb`**
 
 This notebook covers:
 - Dataset loading and preprocessing
@@ -60,8 +61,8 @@ This notebook covers:
 
 ---
 
-### 2️⃣ Inference & Evaluation  
-**`02_inference_and_evaluation.ipynb`**
+### 2️ Inference & Evaluation  
+**`inference_and_evaluation.ipynb`**
 
 This notebook evaluates the fine-tuned model using:
 - **Greedy decoding** (argmax next token)
@@ -98,3 +99,4 @@ Set the following environment variables:
 ```bash
 export HF_TOKEN=your_huggingface_token
 export WANDB_API_KEY=your_wandb_key
+```md
