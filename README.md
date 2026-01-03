@@ -9,7 +9,7 @@ The work focuses on:
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 Large Language Models are not naturally optimized for **precise numeric prediction**.  
 In this project, I fine-tune LLaMA 3.1 using **QLoRA** and evaluate different inference strategies to improve stability and accuracy when predicting prices.
@@ -21,7 +21,7 @@ Key ideas explored:
 
 ---
 
-## 🧠 Model & Dataset
+## Model & Dataset
 
 - **Base Model:** `meta-llama/Meta-Llama-3.1-8B`
 - **Fine-Tuning Method:** QLoRA (4-bit quantization + LoRA adapters)
@@ -30,14 +30,14 @@ Key ideas explored:
 
 ---
 
-## 🏗️ Repository Structure
+## Repository Structure
 
 
 ---
 
-## 📘 Notebooks
+## Notebooks
 
-### 1️⃣ Training – QLoRA Fine-Tuning
+### 1️ Training – QLoRA Fine-Tuning
 **`01_training_qlora.ipynb`**
 
 This notebook covers:
@@ -50,7 +50,7 @@ This notebook covers:
 
 ---
 
-### 2️⃣ Inference & Evaluation
+### 2️ Inference & Evaluation
 **`02_inference_and_evaluation.ipynb`**
 
 This notebook evaluates the fine-tuned model using:
@@ -65,7 +65,7 @@ Evaluation includes:
 
 ---
 
-## 📊 Evaluation Results
+## Evaluation Results
 
 Final evaluation artifacts are stored in the `outputs/` directory.
 
@@ -86,7 +86,7 @@ The plots below visualize this difference:
 
 ---
 
-## 🔬 Technical Highlights
+## Technical Highlights
 
 - QLoRA with NF4 quantization for memory efficiency
 - LoRA applied to attention projections (`q_proj`, `k_proj`, `v_proj`, `o_proj`)
@@ -96,7 +96,7 @@ The plots below visualize this difference:
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### Requirements
 - Python 3.9+
