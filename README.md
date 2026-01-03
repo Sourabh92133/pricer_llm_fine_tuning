@@ -34,8 +34,8 @@ Key ideas explored:
 ```text
 .
 ├── notebooks/
-│   ├── 01_training_qlora.ipynb
-│   └── 02_inference_and_evaluation.ipynb
+│   ├── training_qlora.ipynb
+│   └── inference_and_evaluation.ipynb
 │
 ├── outputs/
 │   ├── greedy_scatter.png
