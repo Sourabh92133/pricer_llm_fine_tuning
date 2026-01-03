@@ -12,7 +12,7 @@ The work focuses on:
 ## Project Overview
 
 Large Language Models are not naturally optimized for **precise numeric prediction**.  
-In this project, I fine-tune LLaMA 3.1 using **QLoRA** and evaluate different inference strategies to improve stability and accuracy when predicting prices.
+In this project, LLaMA 3.1 is fine-tuned using **QLoRA**, and different inference strategies are evaluated to improve stability and accuracy when predicting prices.
 
 Key ideas explored:
 - QLoRA fine-tuning with minimal GPU memory
@@ -32,12 +32,22 @@ Key ideas explored:
 
 ## Repository Structure
 
+.
+├── notebooks/
+│ ├── 01_training_qlora.ipynb
+│ └── 02_inference_and_evaluation.ipynb
+│
+├── outputs/
+│ ├── greedy_scatter.png
+│ └── topk_weighted_scatter.png
+│
+└── README.md
 
 ---
 
 ## Notebooks
 
-### 1️ Training – QLoRA Fine-Tuning
+### 1️⃣ Training – QLoRA Fine-Tuning  
 **`01_training_qlora.ipynb`**
 
 This notebook covers:
@@ -50,7 +60,7 @@ This notebook covers:
 
 ---
 
-### 2️ Inference & Evaluation
+### 2️⃣ Inference & Evaluation  
 **`02_inference_and_evaluation.ipynb`**
 
 This notebook evaluates the fine-tuned model using:
@@ -67,32 +77,12 @@ Evaluation includes:
 
 ## Evaluation Results
 
-Final evaluation artifacts are stored in the `outputs/` directory.
+Evaluation plots are available in the `outputs/` directory.
 
-### Inference strategies compared:
-1. **Greedy decoding**
-2. **Weighted top-K decoding (K=3)**
+- `greedy_scatter.png` shows higher variance in predictions using greedy decoding.
+- `topk_weighted_scatter.png` shows tighter alignment with ground truth using weighted top-K inference.
 
-### Key observations:
-- Weighted top-K inference produces **more stable numeric predictions**
-- Lower RMSLE compared to greedy decoding
-- Slightly improved average error and hit rate
-- Tighter clustering around the ground-truth diagonal
-
-The plots below visualize this difference:
-
-- `greedy_scatter.png` → noisier predictions
-- `topk_weighted_scatter.png` → tighter alignment with ground truth
-
----
-
-## Technical Highlights
-
-- QLoRA with NF4 quantization for memory efficiency
-- LoRA applied to attention projections (`q_proj`, `k_proj`, `v_proj`, `o_proj`)
-- Careful handling of numeric token prediction
-- Explicit evaluation of inference-time strategies
-- Environment-variable–based authentication (safe for public repos)
+Overall, weighted top-K inference produces more stable numeric predictions compared to greedy decoding.
 
 ---
 
@@ -100,10 +90,11 @@ The plots below visualize this difference:
 
 ### Requirements
 - Python 3.9+
-- GPU recommended 
+- GPU recommended
 
 ### Authentication
 Set the following environment variables:
+
 ```bash
 export HF_TOKEN=your_huggingface_token
 export WANDB_API_KEY=your_wandb_key
